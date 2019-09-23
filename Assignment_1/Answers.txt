@@ -1,0 +1,157 @@
+Question 1:
+Show that (i) implies (ii) and that (ii) implies (i)
+(i)		P(A ^ B) = P(A) * P(B)
+(ii)	P(A|B) = P(A)
+
+Answer:
+
+(i) If the probability of A and B happening is the same as the probability of A happening
+	multiplied by the probability of B happening then A and B are independent
+
+(ii) Similarly if the probability of A happening given B has already happened is the same
+	 as the probability of A happening on its own, then A and B are independent. 
+
+P(A|B) = P(A ^ B) / P(B)
+P(A ^ B) / P(B) = P(A)
+P(A ^ B) = P(A) * P(B)
+
+
+
+
+Question 2:
+
+		gw		¬gw
+ps		28	 	 2
+¬ps		140		 30
+
+(ps == 'HP caught the Golden Snitch')
+(gw == 'Gryffindor won')
+
+
+(a) Calculate P(gw | ps)
+
+P(gw|ps) = 28/30
+Counts irrelevant were 140 and 30, in the cases were HP did not catch the golden snitch.
+
+
+(b) Calculate P(ps | gw)
+
+P(ps|gw) = 28/168
+Counts irrelevant were 2 and 30, were gryffindor did not win.
+
+
+
+
+Question 3:
+
+Discrete Speaker, values in {'Victor Meldrew', 'Other'}
+Discrete DBI, values in {true, false}, for whether a sound clip contains 'I don't believe it'
+vmel == Speaker = 'Victor Meldrew'
+dbi == DBI = true
+
+(a)
+Which of vmel or ¬vmel is likelier, given dbi, supposing the probabilities:
+P(vmel) = 0.01
+P(dbi|vmel) = 0.95
+P(dbi|¬vmel) = 0.01
+
+P(dbi|vmel)P(vmel) 
+0.95 * 0.01 = 0.0095
+
+P(dbi|¬vmel)P(¬vmel)
+0.01 * (1-0.01) = 0.0099
+
+Therefore, ¬vmel is likelier.
+
+
+(b) Do the same assuming:
+P(vmel) = 0.15
+P(dbi|vmel) = 0.95
+P(dbi|¬vmel) = 0.01
+
+P(dbi|vmel)P(vmel) 
+0.95 * 0.15 = 0.1425
+
+P(dbi|¬vmel)P(¬vmel)
+0.01 * (1-0.15) = 0.0085
+
+Therefore, vmel is likelier.
+
+
+(c) Do the same assuming:
+P(vmel) = 0.01
+P(dbi|vmel) = 0.95
+P(dbi|¬vmel) = 0.001
+
+P(dbi|vmel)P(vmel) 
+0.95 * 0.01 = 0.0095
+
+P(dbi|¬vmel)P(¬vmel)
+0.001 * (1-0.01) = 0.00099
+
+Therefore, vmel is likelier.
+
+
+
+
+Question 4:
+		noisy +		noisy -
+cool +	62			108
+cool -	38			292
+
+Find P(cool+) and P(cool+ | noisy+)
+
+P(cool+) = 170/500 = 17/50
+
+P(cool+|noisy+) = 62/100
+
+Determine whether cool+ is independent of noisy+ 
+
+P(A|B) = P(A)... condition of independence
+Given that A is cool+ and B is noisy+, we can see that
+P(cool+|noisy+) != P(cool+)
+17/50 != 62/100
+and therefore cool+ is not independent of noisy+.
+
+
+
+
+Question 5:
+Table 2: 
+Find:
+P(cool+ | open+)
+P(cool+ | open+, noisy+)
+
+P(cool+|open+) = 90/100
+P(cool+|open+, noisy+) = 54/60
+
+Is cool+ conditionally independent of noisy+ given open+?
+Conditional independence = P(X|Y,Z) = P(X|Z)
+Let X = cool+, Y = noisy+ and Z = open+
+
+P(cool+|open+,noisy+) = P(cool+,open+)
+90/100 = 54/60
+0.9 = 0.9
+
+Therefore cool+ is conditionally independent of noisy+ given open+.
+
+
+Table 3:
+Find:
+P(cool+ | open-)
+P(cool+ | open-, noisy+)
+
+P(cool+|open-) = 80/400
+P(cool+|open-, noisy+) = 8/40
+
+Is cool+ conditionally independent of noisy+ given open-?
+P(cool+|open-,noisy+) = P(cool+|open-)
+8/40 = 80/400
+
+Therefore, cool+ is conditionally independent of noisy+ given open-.
+
+
+
+
+
+

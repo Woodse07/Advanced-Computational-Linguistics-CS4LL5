@@ -1,0 +1,193 @@
+\documentclass[12pt]{report}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+
+\title{CS4LL5
+ Advanced Computational Linguistics}
+\author{Séamus Woods \\ 15317173}
+\date{23/09/2019}
+
+\begin{document}
+\maketitle
+\newpage
+
+\section{Question 1}
+Consider the following equations:
+\begin{itemize}
+\item[i]
+$P(A,B) = P(A) * P(B)$
+\item[ii]
+$P(A|B) = P(A)$
+\end{itemize}
+Show that (i) implies (ii), and also that (ii) implies (i).
+\newline
+\newline
+Answer:
+\newline
+If $P(A,B)$ happening is the same as $P(A) * P(B)$, then A and B are independent. Similarly if $P(A|B)$ is the same as $P(A)$, then A and B are independent.
+\begin{center}
+(i) implies (ii):
+\end{center}
+\begin{center}
+$P(A,B) = P(A) * P(B)$
+\end{center}
+\begin{center}
+$P(A,B) = P(A|B) * P(B)$
+\end{center}
+\begin{center}
+$P(A) * P(B) = P(A|B) * P(B)$
+\end{center}
+\begin{center}
+$P(A) = P(A|B)$
+\end{center}
+\begin{center}
+$P(A|B) = P(A)$
+\end{center}
+\begin{center}
+\end{center}
+\begin{center}
+(ii) implies (i):
+\end{center}
+\begin{center}
+$P(A|B) = P(A)$
+\end{center}
+\begin{center}
+$P(A|B) = P(A,B) / P(B)$
+\end{center}
+\begin{center}
+$P(A) = P(A,B) / P(B)$
+\end{center}
+\begin{center}
+$P(A) * P(B) = P(A,B)$
+\end{center}
+\begin{center}
+$P(A,B) = P(A) * P(B)$
+\end{center}
+
+\section{Question 2}
+(a) Calculate $P(gw|ps)$:
+\newline
+Sample space of ps is 30, and out of those 30, gw happened 28 times, therefore $P(gw|ps) = 28/30$.
+\newline
+The sample space of not-ps is irrelevant since we're working with the probability gw happened \underline{given} ps already happened.
+\newline
+\newline
+(b) Calculate $P(ps|gw)$
+\newline
+Sample space of gw is 168, and out of that ps occurred 28 times. Therefore $P(ps|gw) = 28/168$.
+\newline
+The sample space of not-gw is irrelevant here because we are only concerned about the chance ps occurred \underline{given} gw has already occurred.
+
+\section{Question 3}
+Let vmel stand for Speaker = 'Victor Meldrew'.
+\newline
+Let dbi stand for DBI = true.
+\newline
+\newline
+Work out which of vmel or not-vmel is likelier, given dbi, supposing the following probabilities:
+\newline
+(a) 
+\newline
+$P(vmel) = 0.01$
+\newline
+$P(dbi|vmel) = 0.95$
+\newline
+$P(dbi|not vmel) = 0.01$
+\newline
+\newline
+$P(dbi|vmel)P(vmel) = 0.95 * 0.01 = 0.0095$
+\newline
+$P(dbi|not vmel)P(not vmel) = 0.01 * 1-0.01 = 0.0099$
+\newline
+Therefore not-vmel is likelier given dbi.
+\newline
+\newline
+(b)
+\newline
+$P(vmel) = 0.15$
+\newline
+$P(dbi|vmel) = 0.95$
+\newline
+$P(dbi|not vmel) = 0.01$
+\newline
+\newline
+$P(dbi|vmel)P(vmel) = 0.95 * 0.15 = 0.1425$
+\newline
+$P(dbi|not vmel)P(not vmel) = 0.01 * 1-0.15 = 0.0.0085$
+\newline
+Therefore vmel is likelier given dbi.
+\newline
+\newline
+(c)
+\newline
+$P(vmel) = 0.01$
+\newline
+$P(dbi|vmel) = 0.95$
+\newline
+$P(dbi|not vmel) = 0.001$
+\newline
+\newline
+$P(dbi|vmel)P(vmel) = 0.95 * 0.01 = 0.0095$
+\newline
+$P(dbi|not vmel)P(not vmel) = 0.001 * 1-0.01 = 0.00099$
+\newline
+Therefore vmel is likelier given dbi.
+\newline
+\newline
+
+\section{Question 4}
+Find $P(cool+)$ and $P(cool+|noisy+)$ and conclude from this whether or not $cool+$ is independent of $noisy+$
+\newline
+\newline
+$P(cool+) = 170/500 = 17/50$
+\newline
+$P(cool+|noisy+) = 62/100$
+\newline
+A condition of independence is $P(A|B) = P(A)$, so if $cool+$ and $noisy+$ are independent they must follow this rule.
+\newline
+$P(cool+) = P(cool+|noisy+)$
+\newline
+$17/50 = 62/100$ is not true, and therefore $cool+$ is not independent of $noisy+$.
+
+\section{Question 5}
+With reference to table 2, find $P(cool+|open+)$, $P(cool+|open+, noisy+)$.
+\newline
+$P(cool+|open+)=90/100$
+\newline
+$P(cool+|open+,noisy+)=54/60$
+\newline
+Is $cool+$ conditionally independent of $noisy+$ given $open+$?
+\newline
+Conditional independence = $P(X|Y,Z) = P(X|Z)$.
+\newline
+Let $X=cool+$, $Y=noisy+$ and $Z=open+$.
+\newline
+$P(cool+|open+,noisy+) = P(cool+,open+)$
+\newline
+$90/100 = 54/60$
+\newline
+$0.9 = 0.9$
+\newline
+Therefore $cool+$ is conditionally independent of $noisy+$ given $open+$.
+\newline
+\newline
+With reference to table 3, find $P(cool+|open-)$ and $P(cool+|open-,noisy+)$.
+\newline
+$P(cool+|open-) = 80/400$
+\newline
+$P(cool+|open-,noisy+) = 8/40$
+\newline
+Is $cool+$ conditionally independent of $noisy+$ given $open-$?
+\newline
+$P(cool+|open-,noisy+) = P(cool+|open-)$
+\newline
+$8/40 = 80/400$
+\newline
+$0.2 = 0.2$
+\newline
+Therefore, $cool+$ is conditionally independent of $noisy+$ given $open-$.
+
+\end{document}
