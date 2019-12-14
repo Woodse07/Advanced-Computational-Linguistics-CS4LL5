@@ -1,0 +1,53 @@
+a1:
+s1 = La Maison
+o1 = The House
+
+a2:
+s2 = La Fleur
+o2 = The Flower
+
+3^2 = 9 possibilities, since we can match o with NULL
+2^2 = 4 possibilities for the sake of writing less..
+*For each pair
+
+a1: a11(La:The, La:House), a12(La:The, Maison:House), a13(La:House, Maison:The), etc..
+
+tr(o|s) la  	ma  	fl
+the	0.33	0.33	0.33 
+ho	0.33	0.33	0.33
+flo	0.33	0.33	0.33
+
+
+Iteration 1:
+
+a11 = 0.33*0.33 ..... (La:The, La:House)
+a11 = 1/9
+
+a1n = 1/9...
+a2n = 1/9...
+
+P(a11|o1,s1) = 1/9 / (4*1/9) = 1/4
+
+Count number of pairs...
+
+counts  la  	ma  	fl
+the	4*0.25	2*0.25	2*0.25
+ho	2*0.25	2*0.25	0
+flo	2*0.25	0	2*0.25
+
+Normalise...
+
+tr(o|s) la  	ma  	fl
+the	0.5	0.5	0.5
+ho	0.25	0.5	0
+flo	0.25	0	0.5
+
+
+Iteration 2:
+a11 = 0.5*0.25 ..... (La:The, La:House)
+a11 = 0.125
+
+P(a11|o1,s1) = 0.125 / (0.125 + 0.25 + 0.125 + 0.25) = 0.1666
+
+
+
